@@ -1,0 +1,17 @@
+{
+  "host":"localhost",
+  "baseURL":"webBoilerplate",
+  "homeURL": "http://localhost/webBoilerplate",
+  "sassDir":"./assets/css/scss",
+  "iconsDir":"./assets/icons",
+  "imgSrcDir": "./assets/img",
+  "cssDir":"./assets/css",
+  "imgDir": "./assets/img",
+  "fontsDir": "./assets/fonts",
+  "jsDir": "./assets/js",
+  "jsSrcDir": "./app",
+  "cleanFiles":["node_modules", ".sass-cache", "bower_components"],
+  "copyFiles":{
+    "./app/libs/vendor/components-font-awesome/fonts/*":"./assets/fonts/"
+  }
+}
