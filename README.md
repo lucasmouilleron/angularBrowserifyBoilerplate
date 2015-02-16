@@ -1,11 +1,11 @@
-angularRequireJsBoilerplate
-===========================
+angularBrowserifyBoilerplate
+============================
 
 Features
 --------
-- A nice angular browserify boilerplate
-- Stack : requirejs, angular, scss, bootstrap, fontawesome
-- Build : install, build, watch, grunt, bower
+- Our Angular Browserify boilerplate.
+- Stack : browserify, angular, scss, bootstrap
+- Build : grunt, bower, npm, browserify, install, build, watch
 
 Install
 -------
@@ -17,13 +17,19 @@ Install
 
 Build
 -----
-- edit `local.package.json` if needed
-- `npm install && grunt build`
+- Edit the `package.local.json` file
+- `grunt build` to build everything
+- `grunt watch:scripts` while coding
 
-
+Angular, Browserify, CommonJS, dependencies
+-------------------------------------------
+- Browserify is used to compile the app
+- If module is not CommonJS, use `browserify-shim` (for shimming and deps) and `browser` (for aliases) in `package.json`
+- If module is not available via bower or npm, use napa
 
 Notes
 -----
+- Templates optimization in non debug mode
 - Compatible with phantomJS snapshoting 
     - Controllers update the `data-status` of the `body` tag when they finished
     - cf [https://github.com/lucasmouilleron/phantomJSBoilerplate](https://github.com/lucasmouilleron/phantomJSBoilerplate)

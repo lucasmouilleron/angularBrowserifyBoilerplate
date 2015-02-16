@@ -4,7 +4,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
     cfg: grunt.file.readJSON("package.local.json"),
-    webDir:"./",
     availabletasks: {
       tasks: {
         options: {
@@ -28,15 +27,15 @@ module.exports = function(grunt) {
     },
     ngtemplates: {
       app: {
-        cwd: "<%=cfg.jsDir%>",
-        src: "views/**.html",
-        dest: "<%=cfg.jsDir%>/js/templates.js"
+        cwd: "./",
+        src: "<%=pkg.config.dirs.jsSrc%>/views/**.html",
+        dest: "<%=pkg.config.dirs.jsSrc%>/templates.js"
       }
     },
     browserify: {
       watch: {
         files: {
-          "<%=cfg.jsDir%>/scripts.min.js": ["<%=cfg.jsSrcDir%>/app.js"],
+          "<%=pkg.config.dirs.js%>/scripts.min.js": ["<%=pkg.config.dirs.jsSrc%>/app.js"],
         },
         options: {
           watch: true
@@ -44,7 +43,7 @@ module.exports = function(grunt) {
       },
       compile: {
         files: {
-          "<%=cfg.jsDir%>/scripts.min.js": ["<%=cfg.jsSrcDir%>/app.js"],
+          "<%=pkg.config.dirs.js%>/scripts.min.js": ["<%=pkg.config.dirs.jsSrc%>/app.js"],
         }
       }
     },
@@ -55,7 +54,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          "<%=cfg.jsDir%>/scripts.min.js": ["<%=cfg.jsDir%>/scripts.min.js"]
+          "<%=pkg.config.dirs.js%>/scripts.min.js": ["<%=pkg.config.dirs.js%>/scripts.min.js"]
         }
       }
     },
@@ -63,12 +62,12 @@ module.exports = function(grunt) {
       compile: {
         options: {
           httpPath: "<%=cfg.baseURL%>",
-          sassDir: "<%=cfg.sassDir%>",
-          cssDir: "<%=cfg.cssDir%>",
-          imagesDir: "<%=cfg.imgDir%>",
-          fontsDir: "<%=cfg.fontsDir%>",
-          httpStylesheetsPath:"<%=cfg.cssDir%>",
-          cacheDir: "<%=localDir%>/.sass-cache",
+          sassDir: "<%=pkg.config.dirs.sass%>",
+          cssDir: "<%=pkg.config.dirs.css%>",
+          imagesDir: "<%=pkg.config.dirs.img%>",
+          fontsDir: "<%=pkg.config.dirs.fonts%>",
+          httpStylesheetsPath:"<%=pkg.config.dirs.css%>",
+          cacheDir: ".sass-cache",
           outputStyle:"compressed",
           relativeAssets:true,
           lineComments:false,
@@ -80,17 +79,13 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      js: {
-        files: ["<%=cfg.jsDir%>/**/*.js"],
-        tasks: ["compile:scripts"]
-      },
       sass: {
-        files: ["<%=cfg.sassDir%>/**/*.scss"],
+        files: ["<%=pkg.config.dirs.sass%>/**/*.scss"],
         tasks: ["compile:styles"]
       },
-      everything: {
-        files: ["<%=cfg.sassDir%>/**/*.scss", "<%=cfg.jsDir%>/**/*.js"],
-        tasks: ["compile:scripts", "compile:styles"]
+      fake: {
+        files: ["fake"],
+        tasks: ["default"]
       }
     },
     clean: {
@@ -98,12 +93,12 @@ module.exports = function(grunt) {
         force: true 
       },
       default: {
-        src: "<%=cfg.cleanFiles%>"
+        src: "<%=pkg.config.cleanFiles%>"
       }
     },
     copyFiles: {
       main: {
-        files: "<%=cfg.copyFiles%>"
+        files: "<%=pkg.config.copyFiles%>"
       }
     },
     autoprefixer: {
@@ -113,9 +108,9 @@ module.exports = function(grunt) {
      default: {
        files: [{
         expand: true, 
-        cwd: "<%=cfg.cssDir%>/",
+        cwd: "<%=pkg.config.dirs.css%>/",
       src: "{,*/}*.css",
-      dest: "<%=cfg.cssDir%>/"
+      dest: "<%=pkg.config.dirs.css%>/"
     }]
   }
 }
@@ -137,7 +132,6 @@ module.exports = function(grunt) {
   grunt.registerTask("default", "These help instructions",["availabletasks"]);
   grunt.registerTask("cleanup", "Clean project",["clean:default"]);
   grunt.registerTask("install", "Install the project",["shell:install", "copyFiles:main"]);
-  grunt.registerTask("watch:scripts", "Watch and compile js files",["watch:js"]);
   grunt.registerTask("watch:styles", "Compile sass files",["watch:sass"]);
   grunt.registerTask("compile:scripts", "Compile js files",["browserify:compile"]);
   //grunt.registerTask("compile:scripts", "Compile js files",["ngtemplates","browserify:compile","uglify:dist"]);

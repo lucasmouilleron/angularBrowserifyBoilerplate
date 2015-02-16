@@ -1,6 +1,26 @@
 {
   "name": "angularBrowserifyBoilerplate",
   "version": "0.0.1",
+  "config": {
+    "dirs": {
+      "sass": "./assets/css/scss",
+      "icons": "./assets/icons",
+      "imgSrc": "./assets/img",
+      "css": "./assets/css",
+      "img": "./assets/img",
+      "fonts": "./assets/fonts",
+      "js": "./assets/js",
+      "jsSrc": "./app"
+    },
+    "cleanFiles": [
+      "node_modules",
+      ".sass-cache",
+      "bower_components"
+    ],
+    "copyFiles": {
+      "./app/libs/vendor/components-font-awesome/fonts/*": "./assets/fonts/"
+    }
+  },
   "devDependencies": {
     "browserify": "^8.1.3",
     "browserify-shim": "^3.8.2",
@@ -19,7 +39,8 @@
   "browser": {
     "angular": "./node_modules/angular/angular.js",
     "angular-growl": "./bower_components/angular-growl-v2/build/angular-growl.js",
-    "angular-sweetalert": "./bower_components/angular-sweetalert/SweetAlert.js"
+    "angular-sweetalert": "./bower_components/angular-sweetalert/SweetAlert.js",
+    "sweet-alert": "./bower_components/sweetalert/lib/sweet-alert.js"
   },
   "browserify": {
     "transform": [
@@ -50,7 +71,8 @@
     },
     "angular-sweetalert": {
       "depends": [
-        "angular"
+        "angular",
+        "sweet-alert:swal"
       ]
     }
   },

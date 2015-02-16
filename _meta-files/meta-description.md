@@ -1,4 +1,4 @@
-Our angularRequireJs boilerplate.
+Our Angular Browserify boilerplate.
 
-- Stack : requirejs, angular, scss, bootstrap
-- Build : grunt, bower, install, build, watch
+- Stack : browserify, angular, scss, bootstrap
+- Build : grunt, bower, npm, browserify, install, build, watch

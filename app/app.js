@@ -10,13 +10,18 @@ require("ng-dialog");
 require("angular-sweetalert");
 
 /////////////////////////////////////////////////////////////////////
-//var app = angular.module("app", ["app.filters","app.services","app.directives","app.controllers", "ngRoute", "ngAnimate", "angular-loading-bar", "angular-growl", "ngDialog","oitozero.ngSweetAlert"]);
 var app = angular.module("app", ["app.filters", "app.controllers", "app.services", "app.directives", "ngRoute", "ngAnimate", "angular-loading-bar", "angular-growl", "ngDialog","oitozero.ngSweetAlert"]);
-require("./routes.js");
-require("./filters.js");
-require("./controllers.js");
-require("./services.js");
-require("./directives.js");
+var routes = require("./routes.js");
+var filters = require("./filters.js");
+var controllers = require("./controllers.js");
+var services = require("./services.js");
+var directives = require("./directives.js");
+var config = require("./config/config.js");
+
+/////////////////////////////////////////////////////////////////////
+if(!config.DEBUG) {
+    require("./templates.js");
+}
 
 /////////////////////////////////////////////////////////////////////
 app.config(["growlProvider", function(growlProvider) {
