@@ -32,8 +32,8 @@ app.config(function(growlProvider) {
 });
 
 /////////////////////////////////////////////////////////////////////
-app.config(function($location) {
-    $location.hashPrefix("!");
+app.config(function($locationProvider) {
+    $locationProvider.hashPrefix("!");
 });
 
 /////////////////////////////////////////////////////////////////////

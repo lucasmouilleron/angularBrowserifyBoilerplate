@@ -10,13 +10,13 @@
 @import "print";
 
 /*///////////////////////////////////////////////////////////////////////////*/
-@import "CSS:../js/libs/vendor/bootstrap/dist/css/bootstrap.min";
-@import "CSS:../js/libs/vendor/angular-loading-bar/build/loading-bar";
-@import "CSS:../js/libs/vendor/angular-growl-v2/build/angular-growl";
-@import "CSS:../js/libs/vendor/ngDialog/css/ngDialog";
-@import "CSS:../js/libs/vendor/ngDialog/css/ngDialog-theme-default";
-@import "CSS:../js/libs/vendor/components-font-awesome/css/font-awesome";
-@import "CSS:../js/libs/vendor/sweetalert/lib/sweet-alert";
+@import "CSS:../../../node_modules/bootstrap/dist/css/bootstrap.min";
+@import "CSS:../../../node_modules/angular-loading-bar/build/loading-bar";
+@import "CSS:../../../bower_components/angular-growl-v2/build/angular-growl";
+@import "CSS:../../../node_modules/ng-dialog/css/ngDialog";
+@import "CSS:../../../node_modules/ng-dialog/css/ngDialog-theme-default";
+@import "CSS:../../../bower_components/components-font-awesome/css/font-awesome";
+@import "CSS:../../../bower_components/sweetalert/lib/sweet-alert";
 
 /*///////////////////////////////////////////////////////////////////////////*/
 /* CUSTOM STYLES */

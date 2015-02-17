@@ -22,7 +22,7 @@ angular.module('app').run(['$templateCache', function($templateCache) {
     "        <span class=\"icon-bar\"></span>\n" +
     "        <span class=\"icon-bar\"></span>\n" +
     "      </button>\n" +
-    "      <a class=\"navbar-brand\" href=\"#!/\">angularRequireJs <small><app-version/></small></a>\n" +
+    "      <a class=\"navbar-brand\" href=\"#!/\">angularBrowserifyBoilerplate <small><app-version/></small></a>\n" +
     "    </div>\n" +
     "    <div class=\"navbar-collapse collapse\">\n" +
     "      <ul class=\"nav navbar-nav\">\n" +
