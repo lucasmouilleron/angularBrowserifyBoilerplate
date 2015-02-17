@@ -4,7 +4,7 @@
 var controllers = require("angular").module("app.controllers", []);
 
 /////////////////////////////////////////////////////////////////////
-controller = controllers.controller("redditsController", function ($scope, $q, Reddits) {
+controller = controllers.controller("redditsController", function($scope, $q, Reddits) {
     var next = 0;
     var promises = [];
     $scope.theReddits = [];
@@ -25,7 +25,7 @@ controller = controllers.controller("redditsController", function ($scope, $q, R
 });
 
 /////////////////////////////////////////////////////////////////////
-controllers.controller("githubController", function ($scope, $q, $routeParams, Github) {
+controllers.controller("githubController", function($scope, $q, $routeParams, Github) {
     var promises = [];
     $scope.githubUser = $routeParams.anId;
     var promise = Github.all($scope.githubUser).then(function(repos) {
@@ -39,7 +39,7 @@ controllers.controller("githubController", function ($scope, $q, $routeParams, G
 });
 
 /////////////////////////////////////////////////////////////////////
-controllers.controller("popinController", function ($scope, growl) {
+controllers.controller("popinController", function($scope, growl) {
     $scope.save = function() {
         growl.success("Stuff saved !");
         $scope.closeThisDialog();

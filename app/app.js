@@ -24,26 +24,27 @@ if(!config.DEBUG) {
 }
 
 /////////////////////////////////////////////////////////////////////
-app.config(["growlProvider", function(growlProvider) {
+app.config(function(growlProvider) {
     growlProvider.globalTimeToLive(5000);
     growlProvider.globalDisableCountDown(true);
     growlProvider.globalPosition("bottom-right");
     growlProvider.onlyUniqueMessages(false);
-}]);
+});
 
 /////////////////////////////////////////////////////////////////////
-app.config(["$locationProvider", function($location) {
+app.config(function($location) {
     $location.hashPrefix("!");
-}]);
+});
 
 /////////////////////////////////////////////////////////////////////
-app.run(["$rootScope", "$timeout", "$window", function ($rootScope, $timeout, $window) {
+app.run(function($rootScope, $timeout, $window) {
+    $rootScope.config = config;
     $rootScope.$on('$routeChangeSuccess', function () {
         $timeout(function () {
             $window.scrollTo(0,0);
         }, 500);
     });
-}]);
+});
 
 /////////////////////////////////////////////////////////////////////
 // Some other top level app opeations
