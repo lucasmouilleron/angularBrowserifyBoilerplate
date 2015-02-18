@@ -18,7 +18,7 @@
       "bower_components"
     ],
     "copyFiles": {
-      "./app/libs/vendor/components-font-awesome/fonts/*": "./assets/fonts/"
+      "./bower_components/components-font-awesome/fonts/*": "./assets/fonts/"
     }
   },
   "devDependencies": {
