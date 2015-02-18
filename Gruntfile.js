@@ -119,7 +119,6 @@ module.exports = function(grunt) {
   /////////////////////////////////////////////////////////////////////////
   grunt.loadNpmTasks("grunt-available-tasks");
   grunt.loadNpmTasks("grunt-contrib-watch");
-  grunt.loadNpmTasks("grunt-contrib-requirejs");
   grunt.loadNpmTasks("grunt-contrib-compass");
   grunt.loadNpmTasks("grunt-contrib-clean");
   grunt.loadNpmTasks("grunt-autoprefixer");
@@ -133,8 +132,7 @@ module.exports = function(grunt) {
   grunt.registerTask("cleanup", "Clean project",["clean:default"]);
   grunt.registerTask("install", "Install the project",["shell:install", "copyFiles:main"]);
   grunt.registerTask("watch:styles", "Compile sass files",["watch:sass"]);
-  grunt.registerTask("compile:scripts", "Compile js files",["browserify:compile"]);
-  //grunt.registerTask("compile:scripts", "Compile js files",["ngtemplates","browserify:compile","uglify:dist"]);
+  grunt.registerTask("compile:scripts", "Compile js files",["ngtemplates","browserify:compile","uglify:dist"]);
   grunt.registerTask("watch:scripts", "Watch and compile js files",["browserify:watch", "watch:fake"]);
   grunt.registerTask("compile:styles", "Watch and compile sass files",["compass:compile","autoprefixer"]);
   grunt.registerTask("build", "Build all (scripts + styles)",["install", "compile:styles","compile:scripts"]);

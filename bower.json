@@ -2,9 +2,6 @@
   "name": "angularRequireJsBoilerplate",
   "version": "0.0.0",
   "dependencies": {
-    "bootstrap": "~3.2.0",
-    "console": "~3.46.1",
-    "throbber.js": "~0.0.2",
     "angular-growl-v2": "~0.7.0",
     "components-font-awesome": "~4.2.0",
     "angular-sweetalert": "~1.0.3"
