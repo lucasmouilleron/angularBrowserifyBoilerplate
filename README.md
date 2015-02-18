@@ -17,7 +17,7 @@ Install
 
 Build
 -----
-- Edit the `package.local.json` file
+- Edit the `package.json` and `package.local.json` file
 - `grunt build` to build everything
 - `grunt watch:scripts` while coding
 

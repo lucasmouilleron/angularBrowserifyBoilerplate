@@ -1,5 +1,3 @@
 {
-  "host":"localhost",
-  "baseURL":"webBoilerplate",
-  "homeURL": "http://localhost/webBoilerplate"
+  "baseURL":"angularRequireJsBoilerplate"
 }

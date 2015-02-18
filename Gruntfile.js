@@ -66,7 +66,6 @@ module.exports = function(grunt) {
           cssDir: "<%=pkg.config.dirs.css%>",
           imagesDir: "<%=pkg.config.dirs.img%>",
           fontsDir: "<%=pkg.config.dirs.fonts%>",
-          httpStylesheetsPath:"<%=pkg.config.dirs.css%>",
           cacheDir: ".sass-cache",
           outputStyle:"compressed",
           relativeAssets:true,
