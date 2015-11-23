@@ -1,6 +1,11 @@
 angularBrowserifyBoilerplate
 ============================
 
+An Angular Browserify boilerplate.
+Features a simple sample app.
+
+![Screenshot](http://grabs.lucasmouilleron.com/Screen%20Shot%202015-11-23%20at%2015.35.46.png)
+
 Features
 --------
 - Our Angular Browserify boilerplate.
